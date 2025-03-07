@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 6
+      Hands-on Project 6-3
+
+      Author: 
+      Date:   
+
+      Filename: project06-03.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 6-3</title>
+   <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+   <header>
+      <h1>Hands-on Project 6-3</h1>
+   </header>
+   <article>
+      <h1>Checkout</h1>
+      <form id="billShip" name="billShip" method="get" action="formsubmit.html">
+         <section>
+            <legend>Shipping Address</legend>
+            <fieldset>
+               <label for="firstnameShip">First Name *</label>
+               <input type="text" required id="firstnameShip" name="firstnameShip" />
+               <label for="lastnameShip">Last Name *</label>
+               <input type="text" required id="lastnameShip" name="lastnameShip" />
+               <label for="address1Ship">Address Line 1 *</label>
+               <input type="text" required id="address1Ship" name="address1Ship" />
+               <label for="cityShip">City *</label>
+               <input type="text" required id="cityShip" name="cityShip" />
+               <label for="stateShip">State *</label>
+               <select id="stateShip" name="stateShip">
+                  <option value="OK">Oklahoma</option>
+                  <option value="TX">Texas</option>
+               </select>
+               <label for="countryShip">Country *</label>
+               <input type="text" required id="countryShip" name="countryShip" value="United States" />
+               <label for="codeShip">Postal Code *</label>
+               <input type="text" required id="codeShip" name="codeShip" />
+            </fieldset>
+         </section>
+         <section>
+            <legend>Billing Address</legend>
+            <fieldset>
+               <input type="checkbox" id="useShip" />
+               <label for="useShip">Same as Shipping Address</label>
+               <label for="firstnameBill">First Name *</label>
+               <input type="text" required id="firstnameBill" name="firstnameBill" />
+               <label for="lastnameBill">Last Name *</label>
+               <input type="text" required id="lastnameBill" name="lastnameBill" />
+               <label for="address1Bill">Address Line 1 *</label>
+               <input type="text" required id="address1Bill" name="address1Bill" />
+               <label for="cityBill">City *</label>
+               <input type="text" required id="cityBill" name="cityBill" />
+               <label for="stateBill">State *</label>
+               <select id="stateBill" name="stateBill">
+                  <option value="OK">Oklahoma</option>
+                  <option value="TX">Texas</option>
+               </select>
+               <label for="countryBill">Country *</label>
+               <input type="text" required id="countryBill" name="countryBill" value="United States" />
+               <label for="codeBill">Postal Code *</label>
+               <input type="text" required id="codeBill" name="codeBill" />
+            </fieldset>
+         </section>
+         <p id="errorBox" style="color: red;"></p>
+         <input type="submit" value="Next" />
+      </form>
+   </article>
+</body>
+</html>
