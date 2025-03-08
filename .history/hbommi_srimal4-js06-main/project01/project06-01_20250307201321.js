@@ -10,21 +10,19 @@
       Filename: project06-01.js
 */
 
-// Selecting password field
 let password = document.getElementById("pwd");
 
-// Set custom validation message for password field
-password.addEventListener("input", function () {
+// Password validation on blur (when the user clicks away)
+password.addEventListener("blur", function() {
     let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordPattern.test(password.value)) {
-        password.setCustomValidity("Password must be at least 8 characters long and include at least one letter and one number.");
-    } else {
-        password.setCustomValidity(""); // Clear the message if valid
+        alert("Your password must be at least 8 characters long and include at least one letter and one number.");
+        password.value = ""; // Clear invalid input
     }
 });
 
 // Form validation on submit
-document.getElementById("signup").addEventListener("submit", function (event) {
+document.getElementById("signup").addEventListener("submit", function(event) {
     let username = document.getElementById("user");
     let email = document.getElementById("email");
     let confirmPassword = document.getElementById("pwd2");
@@ -43,7 +41,7 @@ document.getElementById("signup").addEventListener("submit", function (event) {
     }
 
     if (!passwordPattern.test(password.value)) {
-        errors.push("Password must be at least 8 characters long and include at least one letter and one number.");
+        errors.push("Your password must be at least 8 characters long and include at least one letter and one number.");
     }
 
     if (password.value !== confirmPassword.value) {

@@ -10,16 +10,25 @@
       Filename: project06-01.js
 */
 
-// Selecting password field
+// Selecting elements
 let password = document.getElementById("pwd");
 
-// Set custom validation message for password field
-password.addEventListener("input", function () {
+// Create an inline error message for password
+let passwordError = document.createElement("p");
+passwordError.style.color = "red";
+passwordError.style.fontSize = "0.9em";
+passwordError.style.marginTop = "5px";
+passwordError.style.display = "none"; // Hide initially
+password.parentNode.insertBefore(passwordError, password.nextSibling);
+
+// Validate password on blur (when user clicks away)
+password.addEventListener("blur", function () {
     let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordPattern.test(password.value)) {
-        password.setCustomValidity("Password must be at least 8 characters long and include at least one letter and one number.");
+        passwordError.textContent = "Password must be at least 8 characters long and include at least one letter and one number.";
+        passwordError.style.display = "block"; // Show error
     } else {
-        password.setCustomValidity(""); // Clear the message if valid
+        passwordError.style.display = "none"; // Hide if valid
     }
 });
 
